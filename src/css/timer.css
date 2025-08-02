@@ -39,13 +39,13 @@ button[data-start] {
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 8px 20px rgba(3, 55, 151, 0.3);
     transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 button[data-start]:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(0, 123, 255, 0.4);
+    box-shadow: 0 12px 12px rgba(13, 90, 121, 0.705);
 }
 
 .timer {

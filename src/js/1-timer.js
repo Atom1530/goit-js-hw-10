@@ -1,4 +1,5 @@
-
+import iziToast from "izitoast";
+import "izitoast/dist/css/iziToast.min.css";
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 
@@ -17,7 +18,11 @@ const options = {
   minuteIncrement: 1,
     onClose(selectedDates) {
         if (selectedDates[0] < Date.now()) {
-            window.alert('Please choose a date in the future')
+          
+          iziToast.error({
+            message: `Please choose a date in the future`,
+            position: 'topRight'
+          });
             return;
      }
         userSelectedDates = selectedDates[0];
