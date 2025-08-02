@@ -4,6 +4,7 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 
 const startBtn = document.querySelector('button[data-start]');
+const resetBtn = document.querySelector('button[data-reset]');
 
 
 startBtn.disabled = true;
@@ -27,7 +28,10 @@ const options = {
      }
         userSelectedDates = selectedDates[0];
                 startBtn.disabled = false;
-        console.log('Вибрана дата: ', selectedDates[0]);
+                iziToast.success({
+            message: `Вибрана дата: ', ${selectedDates[0]}`,
+            position: 'topRight'
+          });
 
   },
 };
@@ -79,4 +83,14 @@ function updateTimerUI({ days, hours, minutes, seconds }) {
   document.querySelector('[data-seconds]').textContent = seconds;
 }
 
+resetBtn.addEventListener('click',resetTimerUI)
+
+function resetTimerUI() {
+  clearInterval(intervalId);
+  intervalId = null;
+  document.querySelector('[data-days]').textContent = "00";
+  document.querySelector('[data-hours]').textContent = "00";
+  document.querySelector('[data-minutes]').textContent = "00";
+  document.querySelector('[data-seconds]').textContent = "00";
+}
 
