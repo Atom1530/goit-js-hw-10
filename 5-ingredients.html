@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>💸 От Бомжа до Миллиардера</title>
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-10/assets/5-ingredients-BHci1ts2.css">
+  </head>
+  <body>
+    <div class="game">
+      <h1 class="game__title">💸 От Бомжа до Миллиардера</h1>
+
+      <!-- HUD (информация о персонаже) -->
+      <div class="hud">
+        <div class="hud__stat">💰 Деньги: <span id="money">0</span></div>
+        <div class="hud__stat">🍞 Еда: <span id="food">0</span></div>
+        <div class="hud__stat">❤️ Здоровье: <span id="health">70</span>%</div>
+        <div class="hud__stat">🎓 Уровень: <span id="level">1</span></div>
+      </div>
+
+      <!-- Основные действия -->
+      <div class="actions">
+        <button class="btn btn--main" id="searchBtn">🔍 Шукати гроші</button>
+        <button class="btn btn--food" id="buyFoodBtn" disabled>
+          🍞 Купить еду ($3)
+        </button>
+      </div>
+
+      <!-- Инвентарь / события -->
+      <div class="log" id="log">
+        <p>Ты голоден. Попробуй найти немного денег...</p>
+      </div>
+    </div>
+
+    <script src="./js/5-ingredients.js"></script>
+  </body>
+</html>
