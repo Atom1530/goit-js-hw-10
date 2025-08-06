@@ -1,0 +1,70 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px;
+    background: linear-gradient(135deg, #1b263b, #274472);
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(2, 23, 54, 0.979);
+    width: 320px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.label1 {
+display: flex;
+flex-direction: column;
+color: rgb(131, 146, 226);
+}
+
+
+input[type="number"] {
+    margin-top: 6px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #1e1e1e;
+    color: #fff;
+    outline: none;
+}
+
+input[type="number"]:focus {
+    border-color: rgb(131, 146, 226);
+}
+
+
+fieldset {
+    border: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+legend {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgb(131, 146, 226);
+    margin-bottom: 4px;
+}
+
+label {
+    font-size: 0.9rem;
+}
+
+button[type="submit"] {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    background-color: #1e1e1e;
+    color: #fff;
+    border: 1px solid  rgb(131, 146, 226);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #24817513;
+}

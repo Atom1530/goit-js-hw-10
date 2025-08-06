@@ -1,62 +1,54 @@
-
 body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #ffffff;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     gap: 24px;
+    font-family: system-ui, sans-serif;
+    background: linear-gradient(135deg, #0d1b2a, #1b263b, #274472);
+    color: #ffffff;
 }
+
 #datetime-picker {
-    padding: 12px 16px;
+    padding: 10px 14px;
     font-size: 1rem;
-    border: none;
-    border-radius: 8px;
-    background-color: #ffffff0f;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #1e1e1e;
     color: #fff;
     outline: none;
-    box-shadow: 0 0 0 2px #ffffff30;
-    transition: all 0.3s ease;
 }
 
 #datetime-picker:focus {
-    box-shadow: 0 0 8px #00eaff;
+    border-color: #00eaff;
 }
 
-
-button[data-start],button[data-reset]{
-    padding: 12px 24px;
-    font-size: 1rem;
-    width: 90px;
-    font-weight: 600;
-    background: linear-gradient(135deg, #00eaff, #007bff);
-    color: white;
-    border: none;
-    border-radius: 12px;
+button[data-start],
+button[data-reset] {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    background-color: #1e1e1e;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 4px;
     cursor: pointer;
-    box-shadow: 0 8px 20px rgba(3, 55, 151, 0.3);
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 button[data-start]:hover,
 button[data-reset]:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 12px rgba(13, 90, 121, 0.705);
+    background-color: #2a2a2a;
 }
 
 .timer {
     display: flex;
-    gap: 32px;
-    background-color: #ffffff10;
-    padding: 24px 32px;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    gap: 24px;
+    padding: 20px 28px;
+    border-radius: 8px;
+    background-color: #1b1b1b;
 }
 
 .field {
@@ -66,16 +58,15 @@ button[data-reset]:hover {
 }
 
 .value {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #00eaff;
-    text-shadow: 0 0 10px #00eaff60;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #e22d4b;
 }
 
 .label {
-    font-size: 1rem;
-    color: #ddd;
-    margin-top: 6px;
-    letter-spacing: 1px;
+    margin-top: 4px;
+    font-size: 0.85rem;
+    color: #bbb;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
