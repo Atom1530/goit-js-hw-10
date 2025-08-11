@@ -4,13 +4,12 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 
 const startBtn = document.querySelector('button[data-start]');
-const resetBtn = document.querySelector('button[data-reset]');
+const datetimePicker = document.querySelector('#datetime-picker')
 
 
 startBtn.disabled = true;
 
 let userSelectedDates = null;
-
 
 const options = {
   enableTime: true,
@@ -38,7 +37,6 @@ const options = {
 
 flatpickr('#datetime-picker', options);
 
-
 function pad(value) {
   return String(value).padStart(2, '0');
 }
@@ -58,8 +56,19 @@ function ms2str(time) {
 }
 
 let intervalId;
+
 startBtn.addEventListener('click', () => {
-  if (intervalId) return;
+  if (intervalId) return;          
+  if (!userSelectedDates) return;  
+
+
+  if (userSelectedDates <= Date.now()) {
+    iziToast.error({ message: 'Выберите будущую дату', position: 'topRight' });
+    startBtn.disabled = true;
+    return;
+  }
+
+  datetimePicker.disabled = true;
 
   intervalId = setInterval(() => {
     const currentTime = Date.now();
@@ -67,14 +76,16 @@ startBtn.addEventListener('click', () => {
 
     if (diff < 1000) {
       clearInterval(intervalId);
+      intervalId = null;       
       updateTimerUI(ms2str(0));
-      return;
+      datetimePicker.disabled = false;
+      startBtn.disabled = true;      
     }
 
-    const timeData = ms2str(diff);
-    updateTimerUI(timeData);
+    updateTimerUI(ms2str(diff));
   }, 1000);
 });
+
 
 function updateTimerUI({ days, hours, minutes, seconds }) {
   document.querySelector('[data-days]').textContent = days;
@@ -83,14 +94,5 @@ function updateTimerUI({ days, hours, minutes, seconds }) {
   document.querySelector('[data-seconds]').textContent = seconds;
 }
 
-resetBtn.addEventListener('click',resetTimerUI)
 
-function resetTimerUI() {
-  clearInterval(intervalId);
-  intervalId = null;
-  document.querySelector('[data-days]').textContent = "00";
-  document.querySelector('[data-hours]').textContent = "00";
-  document.querySelector('[data-minutes]').textContent = "00";
-  document.querySelector('[data-seconds]').textContent = "00";
-}
 
